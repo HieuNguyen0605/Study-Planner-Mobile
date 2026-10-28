@@ -20,21 +20,21 @@
 
 | Phân loại | Tính năng yêu cầu | Trạng thái | Vị trí Source Code / Chi tiết kỹ thuật |
 | :--- | :--- | :---: | :--- |
-| **Must Have** | Đăng nhập / Đăng xuất an toàn, lưu phiên | ✅ Đạt | `store/authStore.ts`, `app/sign-in.tsx`, dùng `expo-secure-store` |
-| **Must Have** | CRUD Môn học & Bài tập từ API | ✅ Đạt | `api/client.ts`, `api/courses.ts`, `api/assignments.ts` |
-| **Must Have** | 2 Chế độ xem Lịch (Tuần & Danh sách) | ✅ Đạt | `app/(tabs)/calendar.tsx`, `components/WeeklyCalendar.tsx` |
-| **Must Have** | Lọc theo môn học và trạng thái | ✅ Đạt | Lọc 'all' / 'pending' / 'completed' kết hợp môn học trong `calendar.tsx` |
-| **Must Have** | Nhắc nhở hạn nộp thông báo cục bộ | ✅ Đạt | `utils/notifications.ts` (lên lịch nhắc trước 24h & 2h) |
-| **Must Have** | Thống kê tiến độ theo môn (Computed) | ✅ Đạt | `app/(tabs)/courses.tsx`, `components/CourseCard.tsx` (tính động) |
-| **Must Have** | Hỗ trợ Ngoại tuyến & Offline Banner | ✅ Đạt | `hooks/useNetworkStatus.ts`, `components/ui/OfflineBanner.tsx` |
-| **Should Have (>8đ)** | Đính kèm ảnh chụp ghi chú bài tập | ✅ Đạt | `app/modal/new-assignment.tsx`, `app/assignment/[id].tsx` (Camera & Library) |
-| **Should Have (>8đ)** | Widget tóm tắt deadline 48 giờ | ✅ Đạt | `components/WidgetSummary.tsx` hiển thị ngay đầu màn hình Trang chủ |
-| **Should Have (>8đ)** | Optimistic updates kèm rollback | ✅ Đạt | `api/assignments.ts` và `app/assignment/[id].tsx` khi hoàn thành bài |
-| **Tiêu chuẩn UI** | 4 Trạng thái (Loading, Empty, Error, Content) | ✅ Đạt | Đầy đủ tại 100% các màn hình (`components/ui/*`) |
-| **Tiêu chuẩn UI** | Dark & Light Mode từ 1 file token duy nhất | ✅ Đạt | `constants/tokens.ts` (đảm bảo độ tương phản chữ/nền >= 4.5:1) |
-| **Tiêu chuẩn UI** | Accessibility WCAG (Target >= 44x44, label, role) | ✅ Đạt | Áp dụng `minTouchSize: 44`, `hitSlop`, `accessibilityRole`, `accessibilityLabel` |
-| **Kiến trúc** | Cấu trúc định tuyến Expo Router (5+ màn hình) | ✅ Đạt | 1 Dynamic Route (`[id]`), 1 Modal Route (`modal/new-assignment`), 4 Tabs, `+not-found` |
-| **Kiểm thử** | Kiểm thử tự động (Tối thiểu 3 tests) | ✅ Đạt | **4 test suites, 22 unit tests** chạy với Jest & `@react-native/jest-preset` |
+| **Cơ bản** | Đăng nhập / Đăng xuất an toàn, lưu phiên | ✅ Đạt | `store/authStore.ts`, `app/sign-in.tsx`, dùng `expo-secure-store` |
+| **Cơ bản** | CRUD Môn học & Bài tập từ API | ✅ Đạt | `api/client.ts`, `api/courses.ts`, `api/assignments.ts` |
+| **Cơ bản** | 2 Chế độ xem Lịch (Tuần & Danh sách) | ✅ Đạt | `app/(tabs)/calendar.tsx`, `components/WeeklyCalendar.tsx` |
+| **Cơ bản** | Lọc theo môn học và trạng thái | ✅ Đạt | Lọc 'all' / 'pending' / 'completed' kết hợp môn học trong `calendar.tsx` |
+| **Cơ bản** | Nhắc nhở hạn nộp thông báo cục bộ | ✅ Đạt | `utils/notifications.ts` (lên lịch nhắc trước 24h & 2h) |
+| **Cơ bản** | Thống kê tiến độ theo môn (Computed) | ✅ Đạt | `app/(tabs)/courses.tsx`, `components/CourseCard.tsx` (tính động) |
+| **Cơ bản** | Hỗ trợ Ngoại tuyến & Offline Banner | ✅ Đạt | `hooks/useNetworkStatus.ts`, `components/ui/OfflineBanner.tsx` |
+| **Mở rộng** | Đính kèm ảnh chụp ghi chú bài tập | ✅ Đạt | `app/modal/new-assignment.tsx`, `app/assignment/[id].tsx` (Camera & Library) |
+| **Mở rộng** | Widget tóm tắt deadline 48 giờ | ✅ Đạt | `components/WidgetSummary.tsx` hiển thị ngay đầu màn hình Trang chủ |
+| **Mở rộng** | Cập nhật trạng thái bài tập mượt mà | ✅ Đạt | `api/assignments.ts` và `app/assignment/[id].tsx` khi hoàn thành bài |
+| **Giao diện** | 4 Trạng thái (Loading, Empty, Error, Content) | ✅ Đạt | Đầy đủ tại các màn hình (`components/ui/*`) |
+| **Giao diện** | Dark & Light Mode dễ nhìn | ✅ Đạt | `constants/tokens.ts` (hỗ trợ chuyển đổi giao diện sáng/tối) |
+| **Giao diện** | Tối ưu trải nghiệm bấm và đọc màn hình | ✅ Đạt | Áp dụng kích thước nút bấm chuẩn, nhãn thông tin rõ ràng |
+| **Cấu trúc** | Cấu trúc định tuyến Expo Router (5+ màn hình) | ✅ Đạt | Dynamic Route (`[id]`), Modal Route (`modal/new-assignment`), Tabs |
+| **Kiểm thử** | Kiểm thử tự động (Unit Tests) | ✅ Đạt | Các bộ unit test chạy với Jest kiểm tra logic cơ bản |
 
 ---
 
@@ -228,10 +228,10 @@ npx tsc --noEmit
 
 ---
 
-## 🌟 Điểm Nổi Bật của Dự án (> 8.0 Điểm)
+## 📱 Các Chức Năng Chính Đã Hoàn Thành Của Ứng Dụng
 
-1. **Optimistic Updates với Rollback tự động:** Khi người dùng nhấn hoàn thành bài tập, giao diện lập tức cập nhật và gạch bỏ bài tập ngay tức thì (0ms latency). Nếu API giả lập trả về lỗi, TanStack Query sẽ tự động rollback trạng thái về trước đó và thông báo lỗi.
-2. **Đính kèm Ảnh ghi chú (Handwritten Notes):** Cho phép chụp trực tiếp từ camera hoặc chọn từ thư viện ảnh để lưu lại ảnh chụp đề cương, slide giảng viên hoặc bản nháp viết tay của bài tập.
-3. **Widget 48h thông minh:** Tự động tính toán các bài tập sắp hết hạn trong 48 giờ tới, nhóm theo mức độ khẩn cấp (Hôm nay / Ngày mai) để sinh viên không bao giờ bị trễ hạn.
-4. **Hệ thống Design Tokens chuẩn WCAG AA:** Đảm bảo tỉ lệ tương phản chữ/nền luôn đạt từ 4.5:1 đến 16:1, kích thước vùng chạm tối thiểu 44x44 points, hỗ trợ người khiếm thị đọc màn hình với nhãn trợ năng đầy đủ.
-5. **Chế độ Ngoại tuyến mượt mà:** Ứng dụng tự động phát hiện mất mạng, hiển thị dải thông báo cảnh báo ngoại tuyến và sử dụng cache nội bộ mà không làm gián đoạn việc xem lịch học.
+1. **Quản lý & Cập nhật bài tập:** Cho phép sinh viên đánh dấu hoàn thành bài tập nhanh chóng với giao diện trực quan, rõ ràng.
+2. **Đính kèm Ảnh ghi chú:** Hỗ trợ chọn ảnh từ thư viện hoặc chụp ảnh để lưu lại đề bài và ghi chú cần thiết.
+3. **Widget tóm tắt hạn nộp 48 giờ:** Hiển thị danh sách các bài tập sắp tới hạn trong 48 giờ giúp sinh viên dễ theo dõi.
+4. **Giao diện thân thiện, hỗ trợ Dark/Light Mode:** Bố cục rõ ràng, dễ thao tác, có thể đổi theme Sáng / Tối theo ý thích.
+5. **Xem Lịch và Hỗ trợ Ngoại tuyến cơ bản:** Hỗ trợ xem lịch học theo tuần và lưu trữ dữ liệu cục bộ khi mất mạng.
